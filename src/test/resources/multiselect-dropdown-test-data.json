@@ -1,0 +1,4 @@
+{
+  "dropdownItems": ["Baseball", "Basketball", "Cricket", "Field Hockey", "Football", "Table Tennis", "Tennis", "Volleyball"],
+  "selectedSports": ["Tennis", "Football"]
+}
