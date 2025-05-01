@@ -93,7 +93,9 @@ public class DropDownsPage extends BaseClass {
         waitForElementVisible(dropdownItems);
         wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(dropdownItems, expectedItems.length - 1));
 
-        List<String> visibleItemTexts = driver.findElements(dropdownItems).stream()
+        List<WebElement> allItems = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(dropdownItems));
+
+        List<String> visibleItemTexts = allItems.stream()
                 .map(item -> item.getText().trim())
                 .collect(Collectors.toList());
 
@@ -103,6 +105,7 @@ public class DropDownsPage extends BaseClass {
             }
         }
     }
+
 
     /**
      * Opens the multi-select dropdown.
